@@ -36,6 +36,7 @@ Then, enable the bundle by adding the following line in the <code>app/AppKernel.
     // app/AppKernel.php
     $bundles = array(
     ...
+    new Symfony\Bundle\AsseticBundle\AsseticBundle(),
     new aos\UserBundle\aosUserBundle(),
     new FOS\UserBundle\FOSUserBundle(),
     new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
@@ -55,49 +56,50 @@ Add the following routes to your application <code>app/config.yml</code> and poi
 
 <pre>
 parameters:
-            oauth.facebook.id: 153139431777462
-            oauth.facebook.secret: d06f859366eff5f7f9503298e63d880d
-            oauth.github.id: e8f4c8b3085715d55753
-            oauth.github.secret: ec84c01d5a94c4cfda6dda7e384ad14bd340b8cf
+      oauth.facebook.id: 153139431777462
+      oauth.facebook.secret: d06f859366eff5f7f9503298e63d880d
+      oauth.github.id: e8f4c8b3085715d55753
+      oauth.github.secret: ec84c01d5a94c4cfda6dda7e384ad14bd340b8cf
 
 framework:
-          translator:      ~
+    translator:      ~
 
 fos_user:
-          db_driver: orm
-          firewall_name: main
-          user_class: aos\UserBundle\Entity\User
+    db_driver: orm
+    firewall_name: main
+    user_class: aos\UserBundle\Entity\User
 
 hwi_oauth:
-        firewall_name: main
-        resource_owners:
-          facebook:
-            type: facebook
-            client_id: %oauth.facebook.id%
-            client_secret: %oauth.facebook.secret%
-            infos_url: https://graph.facebook.com/me?fields=email
-            scope: "email"
-            paths:
-               email: email
-          github:
-            type: github
-            client_id: %oauth.github.id%
-            client_secret: %oauth.github.secret%
-            scope: email
+  firewall_name: main
+  resource_owners:
+    facebook:
+      type: facebook
+      client_id: %oauth.facebook.id%
+      client_secret: %oauth.facebook.secret%
+      infos_url: https://graph.facebook.com/me?fields=email
+      scope: "email"
+      paths:
+         email: email
+    github:
+      type: github
+      client_id: %oauth.github.id%
+      client_secret: %oauth.github.secret%
+      scope: email
 
 aos_user:
-            register:
-                firstname: False # True or False
-                lastname: False
-                phonenumber: False
-                birthday: False
-                carte_Identite: False
-                gender: False
-                country: False
-            network:
-                visible: False
-                facebook: True
-                github: False  
+      register:
+          firstname: False # True or False
+          lastname: False
+          phonenumber: False
+          birthday: False
+          carte_Identite: False
+          gender: False
+          country: False
+      network:
+          visible: False
+          facebook: True
+          github: False
+
 </pre>
 
 
