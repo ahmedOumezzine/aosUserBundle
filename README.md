@@ -6,9 +6,9 @@ Setting up the bundle
 # Installation
 <ol>
 
-# <li>first step</li>
+<h1><li>first step</li></h1>
 Add the following line to your <code>composer.json</code> file.
-<br> <br> <br> 
+<br>
 <pre>
     // composer.json
     ...
@@ -25,12 +25,12 @@ Add the following line to your <code>composer.json</code> file.
     </pre>
    
    
-# <li>And now  Download the Bundle</li>
+<h1><li>And now  Download the Bundle</li></h1>
 Run the composer to download the bundle:
 <pre>php composer.phar update  aos/user-bundle </pre>  
 
 
-# <li>enable bundle</li>
+<h1><li>enable bundle</li></h1>
 Then, enable the bundle by adding the following line in the <code>app/AppKernel.php</code> file of your project:
 <pre>
     // app/AppKernel.php
@@ -42,7 +42,7 @@ Then, enable the bundle by adding the following line in the <code>app/AppKernel.
     );
 </pre>    
    
-# <li>Configuration</li>
+<h1><li>Configuration</li></h1>
 Add the following routes to your application <code>app/config.yml</code> and point them at actual controller actions
 <pre>
     // app/config.yml
@@ -101,9 +101,10 @@ aos_user:
 </pre>
 
 
-#change your security.yml
+<h1><li>change your security.yml</li></h1>
 
-       
+   <pre>
+   
        security:
         encoders:
             FOS\UserBundle\Model\UserInterface: sha512
@@ -138,51 +139,55 @@ aos_user:
             - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/, role: ROLE_ADMIN }
-            
+ </pre>
+           
        
-   
-#add in routing file
+       <h1><li>routing</li></h1> 
+add in routing file
 
-       
-        aos_user:
-            resource: "@aosUserBundle/Resources/config/routing.yml"
-            prefix:   /
-            
-        fos_user_security:
-            resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-        
-        fos_user_profile:
-            resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-            prefix: /profile
-        
-        fos_user_register:
-            resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-            prefix: /
-        
-        fos_user_resetting:
-            resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-            prefix: /resetting
-        
-        fos_user_change_password:
-            resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-            prefix: /profile
-        
-        hwi_oauth_security:
-            resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-            prefix: /login
-        
-        hwi_oauth_connect:
-            resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
-            prefix: /oauth
-        
-        hwi_oauth_redirect:
-            resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-            prefix:   /connect
-        
-        facebook_login:
-            pattern: /login/check-facebook
-        
-        github_login:
-            pattern: /login/check-github
-       
+<pre>   
+aos_user:
+    resource: "@aosUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#FosUserBundle Routes
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+#HWIOAuthBundle routes
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /login
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /oauth
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+facebook_login:
+    pattern: /login/check-facebook
+
+github_login:
+    pattern: /login/check-github
+      </pre>
+ 
 </ol>
