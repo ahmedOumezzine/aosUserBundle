@@ -3,7 +3,6 @@
   "type": "symfony-bundle",
   "description": "userBundle base sur fosuserbundle",
   "keywords": ["UserBundle", "bootstrap", "facebook", "gihub", "ahmed oumezzine"],
-  "license": "GPL-3.0+",
   "authors": [
     {
       "name": "ahmed oumezzine",
