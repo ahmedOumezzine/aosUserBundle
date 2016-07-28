@@ -1,0 +1,25 @@
+{
+  "name": "aos/user-bundle",
+  "type": "symfony-bundle",
+  "description": "userBundle base sur fosuserbundle",
+  "keywords": ["UserBundle", "bootstrap", "facebook", "gihub", "ahmed oumezzine"],
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "ahmed oumezzine",
+      "email": "ahmedoumezzine@outlook.fr",
+      "homepage": "https://www.facebook.com/Aoumezzine"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2",
+    "friendsofsymfony/user-bundle": "2.*",
+    "hwi/oauth-bundle": "0.4.*@dev",
+    "symfony/assetic-bundle": "^2.8"
+  },
+  "autoload": {
+    "psr-0": { "aos\\UserBundle": "" }
+  },
+  "target-dir": "aos/UserBundle",
+  "minimum-stability": "dev"
+}

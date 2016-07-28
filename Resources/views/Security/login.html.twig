@@ -1,0 +1,60 @@
+{% extends 'aosUserBundle::AOSlayout.html.twig' %}
+
+{% block body %}
+    <div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <div class="logo">
+            AOS-UserBundle
+        </div>
+    <div class="login">
+        <h3>Sign in to your account</h3>
+
+
+        {% if error %}
+        <div class="alert alert-danger">
+            <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+        </div>
+        {% endif %}
+
+
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <div class="form-group">
+                <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control"/>
+            </div>
+            <div class="form-group">
+            <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+            <input type="password" id="password" name="_password" required="required" class="form-control"  />
+            <a class="forgot" href="{{ path('fos_user_resetting_request') }}"> I forgot my password </a>
+            </div>
+            <hr>
+            <div class="form-group">
+                <div class="checkbox-inline">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                </div>
+
+            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-login pull-right"/>
+            </div>
+        </form>
+        <hr>
+        <div class="form-group">
+            <center>
+                <button class="btn btn-facebook" onclick="window.location.href='{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}'">
+                    Connect with Facebook
+                </button>
+                <button class="btn btn-github"  onclick="window.location.href='{{ path('hwi_oauth_service_redirect', {'service': 'github' }) }}'">
+                    Connect with Github
+                </button>
+            </center>
+
+       </div>
+        <div class="new-account">
+            Don't have an account yet?
+            <a href="{{ path('aos_user_register') }}" class="register">Create an account </a>
+        </div>
+
+
+    </div>
+    </div>
+{% endblock body %}

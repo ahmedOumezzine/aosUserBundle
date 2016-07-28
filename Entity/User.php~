@@ -1,0 +1,52 @@
+<?php
+
+namespace aos\UserBundle\Entity;
+
+use FOS\UserBundle\Entity\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="aosuser")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /** @ORM\Column(name="firstname", type="string", length=255, nullable=true) */
+    protected $firstname;
+    /** @ORM\Column(name="Alastname", type="string", length=255, nullable=true) */
+    protected $lastname;
+    /** @ORM\Column(name="phonenumber", type="integer", nullable=true) */
+    protected $phonenumber;
+    /** @ORM\Column(name="carte_Identite", type="integer", nullable=true) */
+    protected $carte_Identite;
+    /** @ORM\Column(name="birthday", type="datetime", nullable=true) */
+    protected $birthday;
+    /** @ORM\Column(name="gender", type="string", length=255, nullable=true) */
+    protected $gender;
+    /** @ORM\Column(name="country", type="string", length=255, nullable=true) */
+    protected $country;
+
+    /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
+    protected $facebook_id;
+    /** @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) */
+    protected $facebook_access_token;
+
+    /** @ORM\Column(name="github_id", type="string", length=255, nullable=true) */
+    private $github_id;
+    /** @ORM\Column(name="github_access_token", type="string", length=255, nullable=true) */
+    protected $github_access_token;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+}

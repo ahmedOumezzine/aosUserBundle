@@ -1,0 +1,7 @@
+aos_user_homepage:
+    path:     /
+    defaults: { _controller: aosUserBundle:Default:index }
+
+aos_user_register:
+    path:     /register
+    defaults: { _controller: aosUserBundle:Default:register }

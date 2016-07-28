@@ -1,0 +1,80 @@
+body{
+    background-color: #333;
+}
+h1, h2, h3 {
+     font-family: 'Raleway', sans-serif;
+ }
+
+
+.login{
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: -30px 30px 50px rgba(0, 0, 0, 0.32);
+    overflow: hidden;
+    padding: 15px;
+    margin-top: auto;
+    color:#7F7F8F;
+}
+.logo{
+    padding: 14px 10px 12px;
+    margin-left: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    min-width: 210px;
+    color:#fff;
+    text-align:center;
+}
+
+.form-control{
+    width: 100%;
+}
+.form-group{
+    margin-top: 15px;
+    display: block;
+}
+.forgot {
+    color: #909090;
+    font-size: 12px;
+    right: 10px;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    top: 9px;
+}
+.new-account {
+    border-top: 1px dotted #EEEEEE;
+    margin-top: 15px;
+    padding-top: 10px;
+    display: block;
+    text-align:center;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn{
+    margin-bottom: 5px;
+    font-family: 'Open Sans';
+}
+.btn-login {
+    background-color: #C83A2A;
+    border-color: #b33426;
+    color: #ffffff;
+}
+.btn-facebook {
+    color: #ffffff;
+    background-color: #133783;
+    border-color: #133783;
+}
+.btn-github{
+    color: #000000;
+    background-color: #fafafa;
+    border-color: #cccccc;
+}
